@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="id">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Shirt Collection - DEEHIDE</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+
+  <script src="theme-toggle.js" defer></script>
+  <script src="animation.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+
+<body class="dark-mode">
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark px-4 bg-dark shadow-sm">
+  <a class="navbar-brand d-flex align-items-center ignore-protect" href="home_page.html">
+    <img src="images/logo2.png" class="me-2" style="width:45px;">
+    <span class="brand-title fw-bold">DEEHIDE</span>
+  </a>
+
+  <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div id="menu" class="collapse navbar-collapse">
+
+    <ul class="navbar-nav ms-auto">
+
+      <li class="nav-item">
+        <a href="home_page.html" class="nav-link ignore-protect">Home</a>
+      </li>
+
+      <li class="nav-item">
+        <a href="shop_page.html" class="nav-link nav-protect" data-link="shop_page.html">Shop</a>
+      </li>
+
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle nav-protect" data-bs-toggle="dropdown" href="#">Product</a>
+
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item nav-protect" data-link="shirt_page.html">Shirt</a></li>
+          <li><a class="dropdown-item nav-protect" data-link="sweater_page.html">Sweater</a></li>
+          <li><a class="dropdown-item nav-protect" data-link="pants_page.html">Pants</a></li>
+        </ul>
+      </li>
+
+      <li class="nav-item">
+        <a href="about_brand.html" class="nav-link ignore-protect">About</a>
+      </li>
+
+    </ul>
+
+    <div class="d-flex align-items-center ms-3">
+
+      <!-- THEME SWITCH -->
+      <div class="form-check form-switch me-3">
+        <input type="checkbox" id="themeToggle" class="form-check-input">
+      </div>
+
+      <!-- LOGIN BUTTON -->
+      <a id="navLoginBtn" href="login.html" class="btn btn-outline-light">Masuk</a>
+
+      <!-- USER ICON -->
+      <a id="navUserIcon" href="dashboard_page.html" class="d-none text-white ms-3" style="font-size:22px;">
+        <i class="fa-solid fa-circle-user"></i>
+      </a>
+
+    </div>
+
+  </div>
+</nav>
+
+
+<!-- NAVBAR LOGIN CHECK -->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+  const user = localStorage.getItem("vt-current");
+
+  if (user) {
+    document.getElementById("navLoginBtn").classList.add("d-none");
+    document.getElementById("navUserIcon").classList.remove("d-none");
+  }
+
+  document.querySelectorAll(".nav-protect").forEach(link => {
+    link.addEventListener("click", function (e) {
+      e.preventDefault();
+
+      if (!user) {
+        Swal.fire({
+          icon: "warning",
+          title: "Login Diperlukan",
+          text: "Silakan login untuk mengakses halaman ini.",
+          confirmButtonText: "Login Sekarang",
+          confirmButtonColor: "#d33",
+        }).then(r => {
+          if (r.isConfirmed) window.location.href = "login.html";
+        });
+
+      } else {
+        window.location.href = this.dataset.link;
+      }
+    });
+  });
+});
+</script>
+
+
+
+<div class="marquee"><span>⚡ ALL SHIRTS • EXCLUSIVE DROP • DEEHIDE COLLECTION ⚡</span></div>
+
+<!-- TITLE -->
+<div class="section-divider" data-animate>
+  <h2>ALL SHIRTS</h2>
+  <div class="line"></div>
+</div>
+
+<!-- PRODUCT GRID -->
+<section class="tshirt-section">
+  <div class="tshirt-container">
+
+    <!-- 12 PRODUK -->
+    <div class="tshirt-card floating-card nav-protect" data-link="product_detail.html">
+      <img src="images/V-TSHIRT 01.png"><h3>Visual Type Black</h3>
+    </div>
+
+    <div class="tshirt-card floating-card nav-protect" data-link="product_detail.html">
+      <img src="images/V-TSHIRT 02.png"><h3>Visual Type White</h3>
+    </div>
+
+    <div class="tshirt-card floating-card nav-protect" data-link="product_detail.html">
+      <img src="images/V-TSHIRT 03.png"><h3>Dark Goat Edition</h3>
+    </div>
+
+    <div class="tshirt-card floating-card nav-protect" data-link="product_detail.html">
+      <img src="images/V-TSHIRT 04.png"><h3>Pocket Black</h3>
+    </div>
+
+    <div class="tshirt-card floating-card nav-protect" data-link="product_detail.html">
+      <img src="images/V-TSHIRT 05.png"><h3>Red Eye</h3>
+    </div>
+
+    <div class="tshirt-card floating-card nav-protect" data-link="product_detail.html">
+      <img src="images/V-TSHIRT 06.png"><h3>Pocket White</h3>
+    </div>
+
+    <div class="tshirt-card floating-card nav-protect" data-link="product_detail.html">
+      <img src="images/V-TSHIRT 01.png"><h3>Night Wolf</h3>
+    </div>
+
+    <div class="tshirt-card floating-card nav-protect" data-link="product_detail.html">
+      <img src="images/V-TSHIRT 02.png"><h3>Neon Acid</h3>
+    </div>
+
+    <div class="tshirt-card floating-card nav-protect" data-link="product_detail.html">
+      <img src="images/V-TSHIRT 03.png"><h3>Blackstorm Tee</h3>
+    </div>
+
+    <div class="tshirt-card floating-card nav-protect" data-link="product_detail.html">
+      <img src="images/V-TSHIRT 04.png"><h3>Urbanline</h3>
+    </div>
+
+    <div class="tshirt-card floating-card nav-protect" data-link="product_detail.html">
+      <img src="images/V-TSHIRT 05.png"><h3>Street Logo</h3>
+    </div>
+
+    <div class="tshirt-card floating-card nav-protect" data-link="product_detail.html">
+      <img src="images/V-TSHIRT 06.png"><h3>White Arrow</h3>
+    </div>
+
+  </div>
+</section>
+
+<div class="marquee"><span>⚡ DEEHIDE • STREETWEAR AUTHENTIC • LIMITED DROP ⚡</span></div>
+
+
+<!-- FOOTER -->
+<footer class="site-footer text-center">
+  <img src="images/logo2.png" height="80" class="mb-3">
+  <p class="footer-copy">23552011324_DAFFA ZULFAN ZAINAL_TIF RP 23 CNS B</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

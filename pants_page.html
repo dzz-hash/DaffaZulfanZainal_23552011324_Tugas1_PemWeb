@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="id">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Pants Collection - DEEHIDE</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+
+  <script src="theme-toggle.js" defer></script>
+  <script src="animation.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+
+<body class="dark-mode">
+
+<!-- ================= NAVBAR ================= -->
+<nav class="navbar navbar-expand-lg navbar-dark px-4 bg-dark shadow-sm">
+
+  <a class="navbar-brand d-flex align-items-center ignore-protect" href="home_page.html">
+    <img src="images/logo2.png" class="me-2" style="width:45px;">
+    <span class="brand-title fw-bold">DEEHIDE</span>
+  </a>
+
+  <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navMenu">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div id="navMenu" class="collapse navbar-collapse">
+
+    <ul class="navbar-nav ms-auto">
+
+      <!-- bebas -->
+      <li class="nav-item">
+        <a href="home_page.html" class="nav-link ignore-protect">Home</a>
+      </li>
+
+      <!-- wajib login -->
+      <li class="nav-item">
+        <a class="nav-link nav-protect" data-link="shop_page.html">Shop</a>
+      </li>
+
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle nav-protect" data-bs-toggle="dropdown" href="#">Product</a>
+
+        <ul class="dropdown-menu dropdown-menu-dark">
+          <li><a class="dropdown-item nav-protect" data-link="shirt_page.html">Shirt</a></li>
+          <li><a class="dropdown-item nav-protect" data-link="sweater_page.html">Sweater</a></li>
+          <li><a class="dropdown-item nav-protect" data-link="pants_page.html">Pants</a></li>
+        </ul>
+      </li>
+
+      <!-- bebas -->
+      <li class="nav-item">
+        <a href="about_brand.html" class="nav-link ignore-protect">About</a>
+      </li>
+
+    </ul>
+
+    <div class="d-flex align-items-center ms-3">
+
+      <div class="form-check form-switch me-3">
+        <input type="checkbox" id="themeToggle" class="form-check-input">
+      </div>
+
+      <!-- LOGIN button -->
+      <a id="navLoginBtn" href="login.html" class="btn btn-outline-light">Masuk</a>
+
+      <!-- USER ICON -->
+      <a id="navUserIcon" href="dashboard_page.html" 
+         class="d-none text-white ms-3" style="font-size:22px;">
+        <i class="fa-solid fa-circle-user"></i>
+      </a>
+
+    </div>
+
+  </div>
+</nav>
+
+<!-- NAV LOGIN PROTECT -->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+  const user = localStorage.getItem("vt-current");
+
+  // tampilkan icon user kalau login
+  if (user) {
+    document.getElementById("navLoginBtn").classList.add("d-none");
+    document.getElementById("navUserIcon").classList.remove("d-none");
+  }
+
+  // proteksi semua .nav-protect
+  document.querySelectorAll(".nav-protect").forEach(link => {
+    link.addEventListener("click", function (e) {
+      e.preventDefault();
+
+      if (!user) {
+        Swal.fire({
+          icon: "warning",
+          title: "Login Diperlukan",
+          text: "Silakan login untuk mengakses halaman ini.",
+          confirmButtonText: "Login Sekarang",
+          confirmButtonColor: "#d33",
+        }).then(r => {
+          if (r.isConfirmed) window.location.href = "login.html";
+        });
+
+      } else {
+        window.location.href = this.dataset.link;
+      }
+    });
+  });
+
+});
+</script>
+
+
+
+<!-- MARQUEE -->
+<div class="marquee">
+  <span>⚡ DEEHIDE • ALL PANTS COLLECTION • PREMIUM STREETWEAR ⚡</span>
+</div>
+
+
+
+<!-- TITLE -->
+<div class="section-divider" data-animate>
+  <h2>PANTS COLLECTION</h2>
+  <div class="line"></div>
+</div>
+
+
+
+<!-- PRODUCT GRID -->
+<section class="tshirt-section">
+  <div class="tshirt-container">
+
+    <!-- setiap produk wajib login -->
+    <div class="tshirt-card floating-card nav-protect" data-link="product_detail.html" data-fade>
+      <img src="images/V-TSHIRT 01.png"><h3>Denim Classic Blue</h3>
+    </div>
+
+    <div class="tshirt-card floating-card nav-protect" data-link="product_detail.html" data-fade>
+      <img src="images/V-TSHIRT 02.png"><h3>Washed Street Blue</h3>
+    </div>
+
+    <div class="tshirt-card floating-card nav-protect" data-link="product_detail.html" data-fade>
+      <img src="images/V-TSHIRT 03.png"><h3>Black Slim Fit</h3>
+    </div>
+
+    <div class="tshirt-card floating-card nav-protect" data-link="product_detail.html" data-fade>
+      <img src="images/V-TSHIRT 04.png"><h3>Urban Tapered</h3>
+    </div>
+
+    <div class="tshirt-card floating-card nav-protect" data-link="product_detail.html" data-fade>
+      <img src="images/V-TSHIRT 05.png"><h3>Loose Denim</h3>
+    </div>
+
+    <div class="tshirt-card floating-card nav-protect" data-link="product_detail.html" data-fade>
+      <img src="images/V-TSHIRT 06.png"><h3>Raw Edge Black</h3>
+    </div>
+
+    <div class="tshirt-card floating-card nav-protect" data-link="product_detail.html" data-fade>
+      <img src="images/V-TSHIRT 01.png"><h3>Vintage Blue</h3>
+    </div>
+
+    <div class="tshirt-card floating-card nav-protect" data-link="product_detail.html" data-fade>
+      <img src="images/V-TSHIRT 02.png"><h3>Grey Minimalist</h3>
+    </div>
+
+    <div class="tshirt-card floating-card nav-protect" data-link="product_detail.html" data-fade>
+      <img src="images/V-TSHIRT 03.png"><h3>Jet Black Jeans</h3>
+    </div>
+
+    <div class="tshirt-card floating-card nav-protect" data-link="product_detail.html" data-fade>
+      <img src="images/V-TSHIRT 04.png"><h3>Urban Cargo Black</h3>
+    </div>
+
+    <div class="tshirt-card floating-card nav-protect" data-link="product_detail.html" data-fade>
+      <img src="images/V-TSHIRT 05.png"><h3>Baggy Blue</h3>
+    </div>
+
+    <div class="tshirt-card floating-card nav-protect" data-link="product_detail.html" data-fade>
+      <img src="images/V-TSHIRT 06.png"><h3>Night Steel</h3>
+    </div>
+
+  </div>
+</section>
+
+
+
+<!-- FOOTER -->
+<footer class="site-footer text-center">
+  <img src="images/logo2.png" height="80" class="mb-3">
+  <p class="footer-copy">23552011324_DAFFA ZULFAN ZAINAL_TIF RP 23 CNS B</p>
+</footer>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

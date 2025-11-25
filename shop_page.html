@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Shop - DEEHIDE</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- JS -->
+  <script src="theme-toggle.js" defer></script>
+  <script src="animation.js" defer></script>
+
+  <!-- SweetAlert -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+
+<body class="dark-mode">
+
+<!-- ===================== NAVBAR ===================== -->
+<nav class="navbar navbar-expand-lg navbar-dark px-4 shadow-sm bg-dark">
+  <a class="navbar-brand d-flex align-items-center ignore-protect" href="home_page.html">
+    <img src="images/logo2.png" style="width:45px;" class="me-2">
+    <span class="brand-title fw-bold">DEEHIDE</span>
+  </a>
+
+  <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navMenu">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navMenu">
+
+    <ul class="navbar-nav ms-auto">
+
+      <li class="nav-item">
+        <a href="home_page.html" class="nav-link ignore-protect">Home</a>
+      </li>
+
+      <li class="nav-item">
+        <a href="shop_page.html" class="nav-link active">Shop</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link nav-protect" data-link="contact_page.html">Contact</a>
+      </li>
+
+      <li class="nav-item">
+        <a href="about_brand.html" class="nav-link ignore-protect">About</a>
+      </li>
+
+    </ul>
+
+    <div class="d-flex align-items-center ms-4">
+
+      <!-- Theme Switch -->
+      <div class="form-check form-switch me-3">
+        <input class="form-check-input" type="checkbox" id="themeToggle">
+      </div>
+
+      <!-- Login Button -->
+      <a id="navLoginBtn" href="login.html" class="btn btn-outline-light">Masuk</a>
+
+      <!-- User Icon -->
+      <a id="navUserIcon" href="dashboard_page.html" class="d-none text-white ms-3" style="font-size:22px;">
+        <i class="fa-solid fa-circle-user"></i>
+      </a>
+
+    </div>
+  </div>
+</nav>
+
+
+<!-- ============ LOGIN PROTECTION (Navbar) ============ -->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const user = localStorage.getItem("vt-current");
+
+  // Jika sudah login → tampilkan icon user
+  if (user) {
+    document.getElementById("navLoginBtn").classList.add("d-none");
+    document.getElementById("navUserIcon").classList.remove("d-none");
+  }
+
+  // Semua link yang butuh login
+  document.querySelectorAll(".nav-protect").forEach(link => {
+    link.addEventListener("click", e => {
+      e.preventDefault();
+
+      if (!user) {
+        Swal.fire({
+          icon: "warning",
+          title: "Login Diperlukan",
+          text: "Silakan login untuk mengakses halaman ini.",
+          confirmButtonText: "Login Sekarang",
+          confirmButtonColor: "#d33",
+        }).then(result => {
+          if (result.isConfirmed) {
+            window.location.href = "login.html";
+          }
+        });
+      } else {
+        window.location.href = link.dataset.link;
+      }
+    });
+  });
+});
+</script>
+
+
+
+<!-- ======================= CONTENT ======================= -->
+<div class="container mt-4">
+
+  <!-- SHIRT -->
+  <div class="section-divider" data-animate>
+    <h2>SHIRT</h2><div class="line"></div>
+  </div>
+
+  <div class="tshirt-container product-grid">
+
+    <div class="tshirt-card floating-card" data-fade>
+      <img src="images/V-TSHIRT 01.png"><h3>Visual Type Black</h3>
+    </div>
+
+    <div class="tshirt-card floating-card" data-fade>
+      <img src="images/V-TSHIRT 02.png"><h3>Visual Type White</h3>
+    </div>
+
+    <div class="tshirt-card floating-card" data-fade>
+      <img src="images/V-TSHIRT 03.png"><h3>Dark Goat Edition</h3>
+    </div>
+
+    <div class="tshirt-card floating-card" data-fade>
+      <img src="images/V-TSHIRT 04.png"><h3>Pocket Black</h3>
+    </div>
+
+    <div class="tshirt-card floating-card" data-fade>
+      <img src="images/V-TSHIRT 05.png"><h3>Red Eye</h3>
+    </div>
+
+    <div class="tshirt-card floating-card" data-fade>
+      <img src="images/V-TSHIRT 06.png"><h3>Pocket White</h3>
+    </div>
+
+    <a class="view-all nav-protect" data-link="shirt_page.html" data-fade>
+      + View All Shirts
+    </a>
+  </div>
+
+
+  <!-- JEANS -->
+  <div class="section-divider" data-animate>
+    <h2>JEANS</h2><div class="line"></div>
+  </div>
+
+  <div class="tshirt-container product-grid">
+
+    <div class="tshirt-card floating-card" data-fade><img src="images/V-TSHIRT 01.png"><h3>Denim Classic</h3></div>
+    <div class="tshirt-card floating-card" data-fade><img src="images/V-TSHIRT 02.png"><h3>Washed Blue</h3></div>
+    <div class="tshirt-card floating-card" data-fade><img src="images/V-TSHIRT 03.png"><h3>Black Slim</h3></div>
+    <div class="tshirt-card floating-card" data-fade><img src="images/V-TSHIRT 04.png"><h3>Street Fit</h3></div>
+    <div class="tshirt-card floating-card" data-fade><img src="images/V-TSHIRT 05.png"><h3>Loose Denim</h3></div>
+    <div class="tshirt-card floating-card" data-fade><img src="images/V-TSHIRT 06.png"><h3>Raw Edge</h3></div>
+
+    <a class="view-all nav-protect" data-link="pants_page.html">+ View All Jeans</a>
+  </div>
+
+
+  <!-- SWEATER -->
+  <div class="section-divider" data-animate>
+    <h2>SWEATER</h2><div class="line"></div>
+  </div>
+
+  <div class="tshirt-container product-grid">
+
+    <div class="tshirt-card floating-card" data-fade><img src="images/V-TSHIRT 01.png"><h3>Classic Knit</h3></div>
+    <div class="tshirt-card floating-card" data-fade><img src="images/V-TSHIRT 02.png"><h3>Oversize</h3></div>
+    <div class="tshirt-card floating-card" data-fade><img src="images/V-TSHIRT 03.png"><h3>Quarter Zip</h3></div>
+    <div class="tshirt-card floating-card" data-fade><img src="images/V-TSHIRT 04.png"><h3>Hooded</h3></div>
+    <div class="tshirt-card floating-card" data-fade><img src="images/V-TSHIRT 05.png"><h3>Graphic Knit</h3></div>
+    <div class="tshirt-card floating-card" data-fade><img src="images/V-TSHIRT 06.png"><h3>Waffle</h3></div>
+
+    <a class="view-all nav-protect" data-link="sweater_page.html">+ View All Sweater</a>
+  </div>
+
+</div>
+
+
+<!-- MARQUEE -->
+<div class="marquee mt-5">
+  <span>⚡ DEEHIDE • LIMITED DROP • EXCLUSIVE MERCH • ⚡</span>
+</div>
+
+<!-- FOOTER -->
+<footer class="site-footer mt-5">
+  <div class="container text-center">
+    <img src="images/logo2.png" style="height:70px;" class="mb-3">
+    <p class="footer-copy">23552011324_DAFFA ZULFAN ZAINAL_TIF RP 23 CNS B</p>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

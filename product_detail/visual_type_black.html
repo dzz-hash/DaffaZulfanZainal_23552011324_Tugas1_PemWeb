@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Detail | VisualTshirt</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body class="light">
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <h1 class="logo">VISUAL<span>TSHIRT</span></h1>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="shop.html">Shop</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+
+    <!-- Toggle -->
+    <div class="theme-toggle">
+      <i class="fas fa-sun"></i>
+      <label class="switch">
+        <input type="checkbox" id="modeToggle">
+        <span class="slider"></span>
+      </label>
+      <i class="fas fa-moon"></i>
+    </div>
+  </header>
+
+  <!-- PRODUCT DETAIL SECTION -->
+  <section class="product-detail">
+    <div class="product-image">
+      <img src="images/V-TSHIRT 01.png" alt="Product Image">
+    </div>
+
+    <div class="product-info">
+      <h2 class="product-title">Visual Type Black</h2>
+      <p class="product-price">Rp 250.000</p>
+      <p class="product-desc">
+        Kaos premium streetwear dengan bahan katun 100% combed 30s. 
+        Nyaman digunakan, cocok untuk gaya kasual maupun harian. 
+        Desain eksklusif VisualTshirt edisi "Visual Type Black".
+      </p>
+
+      <div class="product-size">
+        <label for="size">Ukuran:</label>
+        <select id="size">
+          <option>S</option>
+          <option>M</option>
+          <option>L</option>
+          <option>XL</option>
+        </select>
+      </div>
+
+      <div class="product-actions">
+        <button class="btn-cart"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
+        <button class="btn-buy">Buy Now</button>
+      </div>
+
+      <div class="social-share">
+        <p>Bagikan:</p>
+        <div class="icons">
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-whatsapp"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>© 2025 VisualTshirt - YourFashionIsYourIdentity</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
